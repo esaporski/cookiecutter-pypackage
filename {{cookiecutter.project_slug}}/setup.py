@@ -3,6 +3,7 @@
 """The setup script."""
 
 from setuptools import setup, find_packages
+from {{ cookiecutter.project_slug }} import __version__
 
 with open('README.rst') as readme_file:
     readme = readme_file.read()
@@ -57,6 +58,6 @@ setup(
     test_suite='tests',
     tests_require=test_requirements,
     url='https://{{ cookiecutter.vcs.lower() }}.{{ "org" if cookiecutter.vcs == "BitBucket" or cookiecutter.vcs == "Codeberg" else "com" }}/{{ cookiecutter.vcs_username }}/{{ cookiecutter.project_slug }}',
-    version='{{ cookiecutter.version }}',
+    version=__version__,
     zip_safe=False,
 )

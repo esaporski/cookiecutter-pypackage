@@ -1,13 +1,15 @@
 {% if cookiecutter.use_black == 'y' -%}
 black==22.12.0{% endif %}
-bump2version==1.0.1
 {% if cookiecutter.command_line_interface|lower == 'click' -%}
 click==8.1.3{% endif %}
+commitizen==2.39.1
 coverage==7.0.1
 flake8-black==0.3.6 
 flake8==6.0.0
+isort==5.11.4
 Jinja2==3.1.2
 pip==22.3.1
+pre-commit==2.21.0
 {% if cookiecutter.use_pytest == 'y' -%}
 pytest==7.2.0{% endif %}
 Sphinx==6.0.0
