@@ -37,6 +37,9 @@ Options
 
 The following package configuration options set up different features for your project.
 
+use_poetry
+    Whether to manage packages with `poetry <https://python-poetry.org/docs/>`_
+
 use_pytest
     Whether to use `pytest <https://docs.pytest.org/en/latest/>`_
 
