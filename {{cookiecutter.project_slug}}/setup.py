@@ -15,11 +15,11 @@ requirements = [{%- if cookiecutter.command_line_interface|lower == 'click' %}'C
 test_requirements = [{%- if cookiecutter.use_pytest == 'y' %}'pytest>=3',{%- endif %} ]
 
 {%- set license_classifiers = {
-    'MIT license': 'License :: OSI Approved :: MIT License',
-    'BSD license': 'License :: OSI Approved :: BSD License',
-    'ISC license': 'License :: OSI Approved :: ISC License (ISCL)',
-    'Apache Software License 2.0': 'License :: OSI Approved :: Apache Software License',
-    'GNU General Public License v3': 'License :: OSI Approved :: GNU General Public License v3 (GPLv3)'
+    'MIT': 'License :: OSI Approved :: MIT License',
+    'BSD-3-Clause': 'License :: OSI Approved :: BSD License',
+    'ISC': 'License :: OSI Approved :: ISC License (ISCL)',
+    'Apache-2.0': 'License :: OSI Approved :: Apache Software License',
+    'GPL-3.0-or-later': 'License :: OSI Approved :: GNU General Public License v3 (GPLv3)'
 } %}
 
 setup(
@@ -29,8 +29,8 @@ setup(
     classifiers=[
         'Development Status :: 2 - Pre-Alpha',
         'Intended Audience :: Developers',
-{%- if cookiecutter.open_source_license in license_classifiers %}
-        '{{ license_classifiers[cookiecutter.open_source_license] }}',
+{%- if cookiecutter.project_license in license_classifiers %}
+        '{{ license_classifiers[cookiecutter.project_license] }}',
 {%- endif %}
         'Natural Language :: English',
         'Programming Language :: Python :: 3',
@@ -47,8 +47,8 @@ setup(
     },
     {%- endif %}
     install_requires=requirements,
-{%- if cookiecutter.open_source_license in license_classifiers %}
-    license="{{ cookiecutter.open_source_license }}",
+{%- if cookiecutter.project_license in license_classifiers %}
+    license="{{ cookiecutter.project_license }}",
 {%- endif %}
     long_description=readme + '\n\n' + history,
     include_package_data=True,

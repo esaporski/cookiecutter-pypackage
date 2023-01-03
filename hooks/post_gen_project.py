@@ -14,7 +14,7 @@ if __name__ == "__main__":
         cli_file = pathlib.Path(PROJECT_DIRECTORY / "{{ cookiecutter.project_slug }}" / "cli.py")
         cli_file.unlink()
 
-    if "Not open source" == "{{ cookiecutter.open_source_license }}":
+    if "Proprietary" == "{{ cookiecutter.project_license }}":
         pathlib.Path(PROJECT_DIRECTORY / "LICENSE").unlink()
 
     issue_template_path = {
@@ -26,3 +26,7 @@ if __name__ == "__main__":
     rename = issue_template_path.get("{{ cookiecutter.vcs }}", issue_template_path["Default"])
     pathlib.Path(rename).mkdir(parents=True, exist_ok=True)
     pathlib.Path(PROJECT_DIRECTORY / "ISSUE_TEMPLATE.md").rename(PROJECT_DIRECTORY / rename / "ISSUE_TEMPLATE.md")
+
+    if "y" == "{{cookiecutter.use_poetry}}":
+        pathlib.Path(PROJECT_DIRECTORY / "requirements_dev.txt").unlink()
+        pathlib.Path(PROJECT_DIRECTORY / "setup.py").unlink()

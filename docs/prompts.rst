@@ -52,5 +52,5 @@ command_line_interface
 create_author_file
     Whether to create an authors file
     
-open_source_license
-    Choose a `license <https://choosealicense.com/>`_. Options: [1. MIT License, 2. BSD license, 3. ISC license, 4. Apache Software License 2.0, 5. GNU General Public License v3, 6. Not open source]
+project_license
+    Choose a `license <https://choosealicense.com/>`_. Options: [1. MIT, 2. BSD-3-Clause, 3. ISC, 4. Apache-2.0, 5. GPL-3.0-or-later, 6. Proprietary]
