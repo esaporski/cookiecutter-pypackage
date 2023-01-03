@@ -30,3 +30,4 @@ if __name__ == "__main__":
     if "y" == "{{cookiecutter.use_poetry}}":
         pathlib.Path(PROJECT_DIRECTORY / "requirements_dev.txt").unlink()
         pathlib.Path(PROJECT_DIRECTORY / "setup.py").unlink()
+        pathlib.Path(PROJECT_DIRECTORY / "MANIFEST.in").unlink()

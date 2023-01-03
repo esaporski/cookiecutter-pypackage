@@ -1,19 +1,37 @@
-{%- if cookiecutter.use_poetry == 'y' %}
-[tool.poetry]
+{%- set license_classifiers = {
+    'MIT': 'License :: OSI Approved :: MIT License',
+    'BSD-3-Clause': 'License :: OSI Approved :: BSD License',
+    'ISC': 'License :: OSI Approved :: ISC License (ISCL)',
+    'Apache-2.0': 'License :: OSI Approved :: Apache Software License',
+    'GPL-3.0-or-later': 'License :: OSI Approved :: GNU General Public License v3 (GPLv3)'
+} %}
+
+{%- if cookiecutter.use_poetry == 'y' %}[tool.poetry]
 name = "{{ cookiecutter.project_slug }}"
 version = "{{ cookiecutter.version }}"
 description = "{{ cookiecutter.project_short_description }}"
 authors = ["{{ cookiecutter.full_name }} <{{ cookiecutter.email }}>"]
 readme = "README.md"
 packages = [{include = "{{ cookiecutter.project_slug }}"}]
-
 # Identifiers are listed at the SPDX Open Source License Registry (https://spdx.org/licenses/).
 # If your project is proprietary and does not use a specific licence,
 # you can set this value as 'Proprietary'.
 license = "{{ cookiecutter.project_license }}"
+keywords = ['{{ cookiecutter.project_slug }}',]
+classifiers = [
+    'Development Status :: 2 - Pre-Alpha',
+    'Intended Audience :: Developers',
+{%- if cookiecutter.project_license in license_classifiers %}
+    '{{ license_classifiers[cookiecutter.project_license] }}',
+{%- endif %}
+    'Natural Language :: English',
+    'Programming Language :: Python :: 3',
+    'Programming Language :: Python :: 3.9',
+    'Programming Language :: Python :: 3.10',
+]
 
 [tool.poetry.dependencies]
-python = "^3.10"
+python = "^3.9"
 
 [tool.poetry.group.dev.dependencies]
 black = "^22.12.0"
@@ -49,8 +67,7 @@ command_line = "-m pytest"
 [tool.coverage.xml]
 output = "reports/coverage.xml"
 
-{%- if cookiecutter.use_pytest == 'y' %}
-[tool.pytest.ini_options]
+{%- if cookiecutter.use_pytest == 'y' %}[tool.pytest.ini_options]
 minversion = "6.0"
 junit_family = "xunit2"
 addopts = "-ra --verbose --junit-xml=reports/pytest.xml"
@@ -100,7 +117,6 @@ commands =
 {% else %}
 commands = python setup.py test
 {%- endif %}
-
 [coverage:run]
 relative_files = True
 source = tests,{{ cookiecutter.project_slug }}
