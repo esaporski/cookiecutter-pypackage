@@ -78,7 +78,8 @@ command_line = "-m pytest"
 [tool.coverage.xml]
 output = "reports/coverage.xml"
 
-{%- if cookiecutter.use_pytest == 'y' %}[tool.pytest.ini_options]
+{%- if cookiecutter.use_pytest == 'y' %}
+[tool.pytest.ini_options]
 minversion = "6.0"
 junit_family = "xunit2"
 addopts = "-ra --verbose --junit-xml=reports/pytest.xml"
