@@ -26,19 +26,19 @@ you through the process.
 From sources
 ------------
 
-The sources for {{ cookiecutter.project_name }} can be downloaded from the `Github repo`_.
+The sources for {{ cookiecutter.project_name }} can be downloaded from the `Git repo`_.
 
-You can either clone the public repository:
+You can either clone the repository:
 
 .. code-block:: console
 
-    $ git clone git://github.com/{{ cookiecutter.vcs_username }}/{{ cookiecutter.project_slug }}
+    $ git clone git://{{ cookiecutter.vcs.lower() }}.{{ 'org' if cookiecutter.vcs == 'BitBucket' or cookiecutter.vcs == 'Codeberg' else 'com' }}/{{ cookiecutter.vcs_username }}/{{ cookiecutter.project_slug }}
 
 Or download the `tarball`_:
 
 .. code-block:: console
 
-    $ curl -OJL https://github.com/{{ cookiecutter.vcs_username }}/{{ cookiecutter.project_slug }}/tarball/master
+    $ curl -OJL https://{{ cookiecutter.vcs.lower() }}.{{ 'org' if cookiecutter.vcs == 'BitBucket' or cookiecutter.vcs == 'Codeberg' else 'com' }}/{{ cookiecutter.vcs_username }}/{{ cookiecutter.project_slug }}/tarball/master
 
 Once you have a copy of the source, you can install it with:
 
@@ -47,5 +47,5 @@ Once you have a copy of the source, you can install it with:
     $ python setup.py install
 
 
-.. _Github repo: https://github.com/{{ cookiecutter.vcs_username }}/{{ cookiecutter.project_slug }}
-.. _tarball: https://github.com/{{ cookiecutter.vcs_username }}/{{ cookiecutter.project_slug }}/tarball/master
+.. _Git repo: https://{{ cookiecutter.vcs.lower() }}.{{ 'org' if cookiecutter.vcs == 'BitBucket' or cookiecutter.vcs == 'Codeberg' else 'com' }}/{{ cookiecutter.vcs_username }}/{{ cookiecutter.project_slug }}
+.. _tarball: https://{{ cookiecutter.vcs.lower() }}.{{ 'org' if cookiecutter.vcs == 'BitBucket' or cookiecutter.vcs == 'Codeberg' else 'com' }}/{{ cookiecutter.vcs_username }}/{{ cookiecutter.project_slug }}/tarball/master

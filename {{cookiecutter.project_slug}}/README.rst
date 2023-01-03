@@ -16,8 +16,8 @@
 {%- endif %}
 
 {% if cookiecutter.add_pyup_badge == 'y' %}
-.. image:: https://pyup.io/repos/github/{{ cookiecutter.vcs_username }}/{{ cookiecutter.project_slug }}/shield.svg
-     :target: https://pyup.io/repos/github/{{ cookiecutter.vcs_username }}/{{ cookiecutter.project_slug }}/
+.. image:: https://pyup.io/repos/{{ cookiecutter.vcs.lower() }}/{{ cookiecutter.vcs_username }}/{{ cookiecutter.project_slug }}/shield.svg
+     :target: https://pyup.io/repos/{{ cookiecutter.vcs.lower() }}/{{ cookiecutter.vcs_username }}/{{ cookiecutter.project_slug }}/
      :alt: Updates
 {% endif %}
 
