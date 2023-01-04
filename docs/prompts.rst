@@ -43,9 +43,6 @@ use_poetry
 use_pytest
     Whether to use `pytest <https://docs.pytest.org/en/latest/>`_
 
-add_pyup_badge
-    Whether to include a `pyup <https://github.com/pyupio/pyup>`_ badge
-
 command_line_interface
     Whether to create a console script using Click. Console script entry point will match the project_slug. Options: ['Click', 'Argparse', 'No command-line interface']
 
