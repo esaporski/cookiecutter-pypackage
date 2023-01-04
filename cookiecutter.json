@@ -13,7 +13,7 @@
   "use_black": "y",
   "use_pypi_deployment_with_travis": "n",
   "add_pyup_badge": "n",
-  "command_line_interface": ["Click", "Argparse", "No command-line interface"],
+  "command_line_interface": ["No command-line interface", "Click", "Argparse"],
   "create_author_file": "y",
   "project_license": ["MIT", "BSD-3-Clause", "ISC", "Apache-2.0", "GPL-3.0-or-later", "Proprietary"]
 }
