@@ -65,6 +65,7 @@ version = "{{ cookiecutter.version }}"
 version_files = [
     "pyproject.toml:version",
     "{{ cookiecutter.project_slug }}/__init__.py",
+    "sonar-project.properties:sonar.projectVersion",
 ]
 bump_message = "release: version $current_version → $new_version"
 
