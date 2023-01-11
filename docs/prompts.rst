@@ -43,6 +43,9 @@ use_poetry
 use_pytest
     Whether to use `pytest <https://docs.pytest.org/en/latest/>`_
 
+use_vscode
+    Whether to create configuration files for `VS Code <https://code.visualstudio.com/>`_
+
 command_line_interface
     Whether to create a console script using Click. Console script entry point will match the project_slug. Options: ['Click', 'Argparse', 'No command-line interface']
 

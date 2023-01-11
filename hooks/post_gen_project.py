@@ -31,3 +31,8 @@ if __name__ == "__main__":
         pathlib.Path(PROJECT_DIRECTORY / "requirements_dev.txt").unlink()
         pathlib.Path(PROJECT_DIRECTORY / "setup.py").unlink()
         pathlib.Path(PROJECT_DIRECTORY / "MANIFEST.in").unlink()
+
+    if "y" == "{{cookiecutter.use_vscode}}":
+        pathlib.Path(PROJECT_DIRECTORY / "vscode").rename(PROJECT_DIRECTORY / ".vscode")
+    else:
+        pathlib.Path(PROJECT_DIRECTORY / "vscode").unlink()

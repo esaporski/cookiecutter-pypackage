@@ -11,6 +11,7 @@
   "use_poetry": "y",
   "use_pytest": "y",
   "use_black": "y",
+  "use_vscode": "y",
   "command_line_interface": ["No command-line interface", "Click", "Argparse"],
   "create_author_file": "y",
   "project_license": ["MIT", "BSD-3-Clause", "ISC", "Apache-2.0", "GPL-3.0-or-later", "Proprietary"]
