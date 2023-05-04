@@ -48,8 +48,8 @@ clean-test: ## remove test and coverage artifacts
 	rm -fr htmlcov/
 	rm -fr .pytest_cache
 
-lint/flake8: ## check style with flake8
-	flake8 {{ cookiecutter.project_slug }} tests
+lint/ruff: ## check style with ruff
+	ruff check {{ cookiecutter.project_slug }} tests
 
 {%- if cookiecutter.use_black == 'y' %}
 lint/black: ## check style with black
