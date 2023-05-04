@@ -102,9 +102,8 @@ Before you submit a pull request, check that it meets these guidelines:
 2. If the pull request adds functionality, the docs should be updated. Put
    your new functionality into a function with a docstring, and add the
    feature to the list in README.rst.
-3. The pull request should work for Python 3.5, 3.6, 3.7 and 3.8, and for PyPy. Check
-   https://travis-ci.com/{{ cookiecutter.vcs_username }}/{{ cookiecutter.project_slug }}/pull_requests
-   and make sure that the tests pass for all supported Python versions.
+3. The pull request should work for Python 3.8, 3.9 and 3.10, and for PyPy.
+   Make sure that the tests pass for all supported Python versions.
 
 Tips
 ----
@@ -127,5 +126,3 @@ Then run::
 $ bump2version patch # possible: major / minor / patch
 $ git push
 $ git push --tags
-
-Travis will then deploy to PyPI if tests pass.
